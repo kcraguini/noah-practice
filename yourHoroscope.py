@@ -19,9 +19,6 @@ signs = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra"
 #varibale with kinds of moods
 mood = ["Angy", "Sad", "Flustered", "Ecstatic", "Calm"]
 
- #generates a random integer from the range
-lucky_num = random.randint(1, 10000)
-
 #defining get_Horoscope as a funciton
 def get_Horoscope():
     yourHoroscope = input("What is your Horoscope? ").title()
@@ -31,17 +28,27 @@ def get_Horoscope():
           yourHoroscope = input("What is your Horoscope? ").title()
 
     #prints valid response 
-    print(f"OMG! You are {yourHoroscope}! I have a prediction and a lucky number for you today! I will guess your mood as well")
+    print(f"OMG! You are {yourHoroscope}! I have a prediction and a lucky number for you today! I will also guess your mood")
+
+    #calling the function "predict()" so it runs within this function
+    predict()
+
+    #generates a random integer from the range
+    lucky_num = random.randint(1, 10000)
+    #prints out a random integer from the range
+    print(f" Your lucky number today is {lucky_num:,}! Sieze the world with your number :)")
 
     #generating a random choice from the list "mood" and printing out how you're feeling
     feelings = random.choice(mood)
     print(f"You are {feelings} today. I can feel it in my nuggets.")
-
-    #prints out a random integer from the range
-    print(f" Your lucky number today is {lucky_num:,}! Sieze the world with your number :)")
     return yourHoroscope
+
 
 def predict(): 
      predictions = ["You will fight a bear!", "You won't get a Victory Royale", "A red light will annoy you", 
                "You will receive great news today!", "You will be relaxin maxxin"]
+     random_prediction = random.choice(predictions)
+     print(f"This is your random prediction: {random_prediction}")
+     return random_prediction
 
+get_Horoscope()
