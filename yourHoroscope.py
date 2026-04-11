@@ -10,35 +10,38 @@ Print a personalised horoscope using their sign and the random elements
 Use at least 2 functions
 
 """
-# prints out zodiac moods by signs
-def zodiac_mood():
-     emotion = input().lower()
-     match emotion:
-          case "Water":
-           print("(Cancer, Scorpio, Pisces) You are deeply sensitive and often moody")
-           
-          case "Fire":
-           print("(Aries, Leo, Sagittarius) You tend to be dramatic or irritable")
+import random
 
-          case "Earth":
-             print("(Taurus, Virgo, Capricorn) You can handle stress with practical, often inward reactions")
-          case "Air":
-             print("(Gemini, Libra, Aquarius) You tend to detach")
+#variable with the list of all horoscopes
+signs = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra"
+             , "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
 
-          case _:
-             print("You picked an invalid Zodiac Mood :c")
-             zodiac_mood()
-     return 
-# these are the signs of every horoscope
-signs = [
-     "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius",
-    "capricorn", "aquarius", "pisces"
-    ]
+#varibale with kinds of moods
+mood = ["Angy", "Sad", "Flustered", "Ecstatic", "Calm"]
 
-yourHoroscope = input("What is your Horoscope? ").lower()
+ #generates a random integer from the range
+lucky_num = random.randint(1, 10000)
 
-if yourHoroscope in signs:
-     print (yourHoroscope.capitalize())
-else:
-     print("Unknown Horoscope")
+#defining get_Horoscope as a funciton
+def get_Horoscope():
+    yourHoroscope = input("What is your Horoscope? ").title()
+    #while the input is not what shows in signs, you get invalid response
+    while yourHoroscope not in signs:
+          print("Invalid Horoscope. Please input a valid Horoscope.")
+          yourHoroscope = input("What is your Horoscope? ").title()
+
+    #prints valid response 
+    print(f"OMG! You are {yourHoroscope}! I have a prediction and a lucky number for you today! I will guess your mood as well")
+
+    #generating a random choice from the list "mood" and printing out how you're feeling
+    feelings = random.choice(mood)
+    print(f"You are {feelings} today. I can feel it in my nuggets.")
+
+    #prints out a random integer from the range
+    print(f" Your lucky number today is {lucky_num:,}! Sieze the world with your number :)")
+    return yourHoroscope
+
+def predict(): 
+     predictions = ["You will fight a bear!", "You won't get a Victory Royale", "A red light will annoy you", 
+               "You will receive great news today!", "You will be relaxin maxxin"]
 
