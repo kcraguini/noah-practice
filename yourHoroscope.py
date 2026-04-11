@@ -40,15 +40,16 @@ def get_Horoscope():
 
     #generating a random choice from the list "mood" and printing out how you're feeling
     feelings = random.choice(mood)
-    print(f"You are {feelings} today. I can feel it in my nuggets.")
+    print(f"You are {feelings} today. I can feel it in my nuggets!")
     return yourHoroscope
 
 
 def predict(): 
      predictions = ["You will fight a bear!", "You won't get a Victory Royale", "A red light will annoy you", 
                "You will receive great news today!", "You will be relaxin maxxin"]
+     #using a random choice from the list predication and printing/ returning it to the user
      random_prediction = random.choice(predictions)
      print(f"This is your random prediction: {random_prediction}")
      return random_prediction
-
+#calling the function get_Horoscope so that the entire code works
 get_Horoscope()
