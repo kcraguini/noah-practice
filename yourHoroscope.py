@@ -19,16 +19,21 @@ signs = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra"
 #varibale with kinds of moods
 mood = ["Angy", "Sad", "Flustered", "Ecstatic", "Calm"]
 
+# list of the predictions 
+predictions = ["You will fight a bear!", "You won't get a Victory Royale", "A red light will annoy you", 
+               "You will receive great news today!", "You will be relaxin maxxin"]
+
+
  #generates a random integer from the range
 lucky_num = random.randint(1, 10000)
 
 #defining get_Horoscope as a funciton
 def get_Horoscope():
-    yourHoroscope = input("What is your Horoscope? ").title()
+    yourHoroscope = ""
     #while the input is not what shows in signs, you get invalid response
     while yourHoroscope not in signs:
-          print("Invalid Horoscope. Please input a valid Horoscope.")
           yourHoroscope = input("What is your Horoscope? ").title()
+          print("Invalid Horoscope. Please input a valid Horoscope.")
 
     #prints valid response 
     print(f"OMG! You are {yourHoroscope}! I have a prediction and a lucky number for you today! I will guess your mood as well")
@@ -39,9 +44,12 @@ def get_Horoscope():
 
     #prints out a random integer from the range
     print(f" Your lucky number today is {lucky_num:,}! Sieze the world with your number :)")
+
+    prediction = random.choice(predictions)
+    print(f"Your prediction for today is: {prediction}")
     return yourHoroscope
 
 def predict(): 
-     predictions = ["You will fight a bear!", "You won't get a Victory Royale", "A red light will annoy you", 
-               "You will receive great news today!", "You will be relaxin maxxin"]
+     return
+get_Horoscope()
 
