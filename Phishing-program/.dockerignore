@@ -4,6 +4,7 @@ __pycache__
 .git
 .gitignore
 token.pickle
+credentials.json
 *.swp
 *.swo
 .DS_Store
